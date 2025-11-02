@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ProfileImage() {
   return (
-    <div className="relative aspect-square rounded-2xl overflow-hidden bg-gradient-to-br from-primary/10 to-accent/30">
+    <div className="relative aspect-square rounded-2xl overflow-hidden bg-linear-to-br from-primary/10 to-accent/30">
       <Image
         src="/mr-dele.jpg"
         alt="Mr Dele"

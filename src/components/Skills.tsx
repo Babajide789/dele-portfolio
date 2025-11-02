@@ -35,7 +35,7 @@ export function Skills() {
   return (
     <section
       id="skills"
-      className="py-20 px-6 bg-gradient-to-b from-background via-muted/30 to-background"
+      className="py-20 px-6 bg-linear-to-b from-background via-muted/30 to-background"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section header */}
@@ -111,7 +111,7 @@ export function Skills() {
                           onMouseEnter={() => setHoveredBar(index)}
                           onMouseLeave={() => setHoveredBar(null)}
                           className={`
-                            h-full bg-gradient-to-r from-primary to-primary/80
+                            h-full bg-linear-to-r from-primary to-primary/80
                             rounded-lg transition-all duration-300 cursor-pointer
                             ${hoveredBar === index ? "brightness-110 shadow-lg shadow-primary/50" : ""}
                           `}
@@ -128,7 +128,7 @@ export function Skills() {
                                 duration: 0.6,
                                 ease: "easeInOut",
                               }}
-                              className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                              className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
                             />
                           )}
                         </motion.div>
