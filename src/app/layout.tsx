@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
-import Script from "next/script";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Data Analyst Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Data Analyst Portfolio – Power BI, Excel, Project Management",
@@ -54,15 +54,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
-  // twitter: {
-  //   card: "summary_large_image",
-  //   title:
-  //     "Data Analyst Portfolio | Power BI, Excel, and Data Visualization Expert",
-  //   description:
-  //     "Explore data visualization, analytics, and reporting projects by an expert Data Analyst. Transforming data into insight and clarity.",
-  //   images: ["/og-image.jpg"],
-  //   creator: "@yourtwitterhandle",
-  // },
+  twitter: {
+    card: "summary_large_image",
+    title:
+      "Data Analyst Portfolio | Power BI, Excel, and Data Visualization Expert",
+    description:
+      "Explore data visualization, analytics, and reporting projects by an expert Data Analyst. Transforming data into insight and clarity.",
+    images: ["/og-image.png"],
+    creator: "@deleolafimihan",
+  },
   alternates: {
     canonical: "https://dele-portfolio.vercel.app/",
   },
@@ -77,69 +77,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          id="structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Your Full Name",
-              url: "https://dele-portfolio.vercel.app/",
-              image: "https://client-portfolio-domain.com/og-image.jpg",
-              jobTitle: "Data Analyst",
-              worksFor: {
-                "@type": "Organization",
-                name: "Freelance / Independent Consultant",
-              },
-              description:
-                "Data Analyst skilled in Power BI, Excel, Data Management, and Project Leadership — turning complex datasets into clear business insights and actionable intelligence.",
-              sameAs: [
-                "https://www.linkedin.com/in/your-linkedin-handle/",
-                "https://x.com/yourtwitterhandle",
-                "https://github.com/yourgithubhandle",
-              ],
-              knowsAbout: [
-                "Data Analysis",
-                "Power BI",
-                "Data Visualization",
-                "Microsoft Excel",
-                "Data Management",
-                "Project Management",
-                "Drone Mapping",
-                "Business Intelligence",
-              ],
-              hasSkill: [
-                "Power BI",
-                "Excel",
-                "Project Planner",
-                "Data Cleaning",
-                "Data Storytelling",
-                "Dashboard Development",
-                "Data-Driven Decision Making",
-                "Stakeholder Reporting",
-                "Team Coordination",
-              ],
-              alumniOf: {
-                "@type": "CollegeOrUniversity",
-                name: "Federal University of Technology, Akure (FUTA)",
-              },
-              mainEntityOfPage: {
-                "@type": "WebPage",
-                "@id": "https://client-portfolio-domain.com/",
-              },
-            }),
-          }}
-        />
-          <body
-            className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-          >
-            <Navbar />
-            {children}
-          </body>
-      </head>
-      
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }

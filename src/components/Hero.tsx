@@ -104,11 +104,11 @@ export function Hero() {
           <div className="relative">
             {/* IMPORT IMAGE COMPONENT */}
             <ProfileImage/>
-            
-            <div className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-6 shadow-lg">
+
+            {/* <div className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-6 shadow-lg">
               <p className="text-sm text-muted-foreground">Years of Experience</p>
               <p className="text-3xl">12+</p>
-            </div>
+            </div> */}
           </div>
 
         </div>
