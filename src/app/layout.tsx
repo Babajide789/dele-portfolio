@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     siteName: "Data Analyst Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "https://dele-portfolio.vercel.app/og-image.png",
         width: 1200,
         height: 630,
         alt: "Data Analyst Portfolio – Power BI, Excel, Project Management",
