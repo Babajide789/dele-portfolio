@@ -120,3 +120,41 @@
     @apply bg-background text-foreground;
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+@keyframes social-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+
+
+
+/* Reusable class you can apply to any element; animation runs once (forwards) */
+.animate-social-pulse {
+  animation-name: social-pulse;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both; /* keep the end state clean */
+  animation-iteration-count: 1;
+}
+
+/* Optional helper to ensure transform is smooth and performant */
+.will-change-transform {
+  will-change: transform, opacity;
+}

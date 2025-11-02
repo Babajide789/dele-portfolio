@@ -20,7 +20,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-2">
             <BarChart3 className="w-6 h-6 text-primary" />
-            <span>Bamidele</span>
+            <span>Oladele</span>
           </div>
 
           {/* Desktop Navigation */}

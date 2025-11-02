@@ -1,86 +1,155 @@
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
-import { ExternalLink, Github } from "lucide-react";
-// import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ExternalLink } from "lucide-react";
 
 const projects = [
   {
-    title: "Sales Performance Dashboard",
-    description: "Interactive Power BI dashboard analyzing sales trends across regions, identifying key growth opportunities and revenue drivers. Reduced reporting time by 60%.",
-    image: "https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzfGVufDF8fHx8MTc2MTA2MzAyMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    tags: ["Power BI", "SQL", "DAX"],
-    impact: "60% reduction in reporting time"
+    title: "Del Arete Project Professionals – Residential Construction",
+    description:
+      "Supervised and executed two large-scale residential building projects from foundation to finishing, ensuring quality control, cost management, and timely delivery.",
+    images: [
+      "/projects/del-arete-residential1.jpg",
+      "/projects/del-arete-residential2.jpg",
+      "/projects/del-arete-residential3.jpg",
+    ],
+    tags: ["Project Management", "Construction Supervision", "Client Reporting"],
+    impact: "Delivered both projects 2 weeks ahead of schedule while maintaining 100% client satisfaction.",
   },
   {
-    title: "Customer Segmentation Analysis",
-    description: "Machine learning model to segment customers based on behavior patterns, enabling targeted marketing campaigns that increased conversion by 35%.",
-    image: "https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxidXNpbmVzcyUyMGFuYWx5dGljcyUyMGNoYXJ0c3xlbnwxfHx8fDE3NjExNTQxNjZ8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    tags: ["Python", "Scikit-learn", "Pandas"],
-    impact: "35% increase in conversion"
+    title: "Del Arete Project Professionals – Renovation Works",
+    description:
+      "Led four renovation and remodelling projects focused on space optimization and modern design transformation across both commercial and residential spaces.",
+    images: [
+      "/projects/del-arete-renovation1.jpg",
+      "/projects/del-arete-renovation2.jpg",
+      "/projects/del-arete-renovation3.jpg",
+    ],
+    tags: ["Interior Design", "Cost Planning", "Quality Assurance"],
+    impact: "Improved project delivery efficiency by 40% through process optimization.",
   },
   {
-    title: "Supply Chain Optimization",
-    description: "Developed predictive models to optimize inventory levels and reduce costs. Implemented automated reporting system for real-time monitoring.",
-    image: "https://images.unsplash.com/photo-1584291527908-033f4d6542c8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwdmlzdWFsaXphdGlvbiUyMHNjcmVlbnxlbnwxfHx8fDE3NjEwNzQ3NDd8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    tags: ["R", "Tableau", "PostgreSQL"],
-    impact: "$2M in cost savings"
+    title: "SCRPS – Tolu Complex Supervision & Executive Reporting",
+    description:
+      "Coordinated supervision, site evaluation, and executive-level project reporting for a complex mixed-use development. Managed contractors and progress tracking using Power BI dashboards.",
+    images: [
+      "/projects/scrps-tolu1.jpg",
+      "/projects/scrps-tolu2.jpg",
+      "/projects/scrps-tolu3.jpg",
+    ],
+    tags: ["Supervision", "Executive Reporting", "Power BI"],
+    impact: "Enhanced reporting accuracy and transparency, driving faster decision-making by 25%.",
   },
-  {
-    title: "Financial Forecasting Model",
-    description: "Time series analysis and forecasting model for revenue prediction. Achieved 94% accuracy in quarterly revenue forecasts.",
-    image: "https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXRhJTIwZGFzaGJvYXJkJTIwYW5hbHl0aWNzfGVufDF8fHx8MTc2MTA2MzAyMXww&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
-    tags: ["Python", "Prophet", "Azure"],
-    impact: "94% forecast accuracy"
-  }
 ];
+
+function AutoCarousel({ images }: { images: string[] }) {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(
+      () => setIndex((prev) => (prev + 1) % images.length),
+      3000 // duration for each image (3 seconds)
+    );
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative aspect-video overflow-hidden rounded-t-lg">
+      {images.map((src, i) => (
+        <motion.div
+          key={i}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: i === index ? 1 : 0 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={src}
+            alt={`Project image ${i + 1}`}
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
+            priority={i === 0}
+          />
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 export function Projects() {
   return (
-    <section id="projects" className="py-20 px-6 bg-muted/30">
+    <section
+      id="projects"
+      className="py-20 px-6 bg-linear-to-b from-background via-muted/40 to-background"
+    >
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl mb-4">Featured Projects</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            Real-world data analysis projects delivering measurable business impact
-          </p>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-4xl font-bold mb-4"
+          >
+            Featured Projects
+          </motion.h2>
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="text-muted-foreground max-w-2xl mx-auto text-lg"
+          >
+            A selection of impactful projects that reflect precision, creativity, and data-driven supervision.
+          </motion.p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-10">
           {projects.map((project, index) => (
-            <Card key={index} className="overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="aspect-video overflow-hidden bg-muted">
-                {/* <ImageWithFallback
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                /> */}
-              </div>
-              <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="outline">{tag}</Badge>
-                  ))}
-                </div>
-                <div className="bg-primary/5 rounded-lg p-3">
-                  <p className="text-sm">
-                    <span className="text-primary">Impact:</span> {project.impact}
-                  </p>
-                </div>
-              </CardContent>
-              <CardFooter className="gap-2">
-                <Button variant="outline" size="sm" className="gap-2">
-                  <Github className="w-4 h-4" /> View Code
-                </Button>
-                <Button variant="outline" size="sm" className="gap-2">
-                  <ExternalLink className="w-4 h-4" /> Live Demo
-                </Button>
-              </CardFooter>
-            </Card>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.2, duration: 0.7 }}
+            >
+              <Card className="overflow-hidden border-border/40 hover:shadow-2xl transition-all bg-background/70 backdrop-blur-sm">
+                {/* Auto-sliding gallery */}
+                <AutoCarousel images={project.images} />
+
+                <CardHeader>
+                  <CardTitle>{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                </CardHeader>
+
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tags.map((tag, tagIndex) => (
+                      <Badge key={tagIndex} variant="outline">
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="bg-primary/5 rounded-lg p-3">
+                    <p className="text-sm leading-relaxed">
+                      <span className="text-primary font-medium">Impact:</span> {project.impact}
+                    </p>
+                  </div>
+                </CardContent>
+
+                <CardFooter>
+                  <Button asChild size="sm" variant="outline" className="gap-2">
+                    <a href="#contact">
+                      <ExternalLink className="w-4 h-4" />
+                      Learn More
+                    </a>
+                  </Button>
+                </CardFooter>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>

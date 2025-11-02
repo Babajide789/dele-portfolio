@@ -4,6 +4,8 @@ import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+
+
 export function Contact() {
   return (
     <section id="contact" className="py-20 px-6">
@@ -11,7 +13,7 @@ export function Contact() {
         <div className="text-center mb-12">
           <h2 className="text-4xl mb-4">Get In Touch</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Let&amp;s discuss how data-driven insights can help your business grow
+            Let&apos;s discuss how data-driven insights can help your business grow
           </p>
         </div>
 
@@ -25,7 +27,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4>Email</h4>
-                    <p className="text-sm text-muted-foreground">alex.morgan@email.com</p>
+                    <p className="text-sm text-muted-foreground">deleolafimihan.peter@gmail.com</p>
                   </div>
                 </div>
               </CardContent>
@@ -39,7 +41,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4>Phone</h4>
-                    <p className="text-sm text-muted-foreground">+1 (555) 123-4567</p>
+                    <p className="text-sm text-muted-foreground">+(234) 907 217 9683</p>
                   </div>
                 </div>
               </CardContent>
@@ -53,7 +55,7 @@ export function Contact() {
                   </div>
                   <div>
                     <h4>Location</h4>
-                    <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                    <p className="text-sm text-muted-foreground">Lagos, NG</p>
                   </div>
                 </div>
               </CardContent>

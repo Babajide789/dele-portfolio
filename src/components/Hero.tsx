@@ -1,6 +1,10 @@
-import { ArrowRight, Download, Github, Linkedin, Mail } from "lucide-react";
+
+import { ArrowRight, Download, Mail } from "lucide-react";
 import { Button } from "./ui/button";
-// import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { FaXTwitter, FaWhatsapp, FaLinkedin } from "react-icons/fa6";
+import Link from "next/link";
+import Stats from "./features/Stats";
+import ProfileImage from "./features/ProfileImage";
 
 export function Hero() {
   return (
@@ -10,7 +14,7 @@ export function Hero() {
           <div className="space-y-6">
             <div className="space-y-4">
               <p className="text-muted-foreground">Hello, I&apos;m</p>
-              <h1 className="text-5xl lg:text-6xl">Bamidele</h1>
+              <h1 className="text-5xl lg:text-6xl">Olafimihan Oladele</h1>
               <h2 className="text-3xl lg:text-4xl text-primary/80">Data Analyst</h2>
               <p className="text-muted-foreground max-w-lg">
                 Transforming complex data into actionable insights. Specialized in data visualization, 
@@ -19,41 +23,97 @@ export function Hero() {
             </div>
 
             <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="gap-2">
-                View My Work <ArrowRight className="w-4 h-4" />
-              </Button>
-              <Button size="lg" variant="outline" className="gap-2">
-                <Download className="w-4 h-4" /> Download CV
-              </Button>
+                <Link href="#projects" scroll={true}>
+                  <Button size="lg" className="gap-2">
+                    View My Work <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
+
+               <Link
+                  href="/Oladele-Peter-Olafimihan-Construction-PM.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button size="lg" variant="outline" className="gap-2">
+                    <Download className="w-4 h-4" /> Download CV
+                  </Button>
+                </Link>
             </div>
 
-            <div className="flex gap-4 pt-4">
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Github className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Linkedin className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Mail className="w-5 h-5" />
-              </Button>
+            <div className="flex gap-3 pt-4">
+              <Link
+                href="https://x.com/deleolafimihan?s=21"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="rounded-full animate-social-pulse transition-transform duration-300 hover:scale-110 hover:text-primary hover:bg-primary/10 will-change-transform"
+                  style={{ animationDelay: "0s" }}
+                >
+                  <FaXTwitter className="w-5 h-5" />
+                </Button>
+              </Link>
+
+              {/* LinkedIn */}
+              <Link
+                href="https://www.linkedin.com/in/oladele-peter-olafimihan-pmp-99501844"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button 
+                  variant="ghost" 
+                  size="icon" 
+                  className="rounded-full animate-social-pulse transition-transform duration-300 hover:scale-110 hover:text-blue-600 hover:bg-blue-100/20 will-change-transform"
+                  style={{ animationDelay: "0.12s" }}
+                >
+                  <FaLinkedin className="w-5 h-5" />
+                </Button>
+              </Link>
+
+              {/* Email */}
+              <Link href="mailto:deleolafimihan.peter@gmail.com">
+                <Button 
+                  variant="ghost" 
+                  size="icon"  
+                  className="rounded-full animate-social-pulse transition-transform duration-300 hover:scale-110 hover:text-red-500 hover:bg-red-100/20 will-change-transform"
+                  style={{ animationDelay: "0.24s" }}
+                >
+                  <Mail className="w-5 h-5" />
+                </Button>
+              </Link>
+
+              {/* WhatsApp */}
+              <Link
+                href="https://wa.me/2349072179683"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button 
+                  variant="ghost" 
+                  size="icon" className="rounded-full animate-social-pulse transition-transform duration-300 hover:scale-110 hover:text-green-500 hover:bg-green-100/20 will-change-transform"
+                  style={{ animationDelay: "0.36s" }}
+                >
+                  <FaWhatsapp className="w-5 h-5" />
+                </Button>
+              </Link>
             </div>
           </div>
 
           <div className="relative">
-            <div className="aspect-square rounded-2xl overflow-hidden bg-linear-to-br from-primary/10 to-accent/30">
-              {/* <ImageWithFallback
-                src="https://images.unsplash.com/photo-1657727534685-36b09f84e193?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxwcm9mZXNzaW9uYWwlMjBkYXRhJTIwYW5hbHlzdHxlbnwxfHx8fDE3NjExNTQxNjV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                alt="Data Analyst Professional"
-                className="w-full h-full object-cover"
-              /> */}
-            </div>
+            {/* IMPORT IMAGE COMPONENT */}
+            <ProfileImage/>
+            
             <div className="absolute -bottom-6 -right-6 bg-card border border-border rounded-xl p-6 shadow-lg">
               <p className="text-sm text-muted-foreground">Years of Experience</p>
-              <p className="text-3xl">5+</p>
+              <p className="text-3xl">12+</p>
             </div>
           </div>
+
         </div>
+
+        <Stats/>
       </div>
     </section>
   );
