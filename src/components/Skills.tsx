@@ -11,7 +11,7 @@ const skillsData = [
   { skill: "Project Management", proficiency: 88 },
   { skill: "Power BI", proficiency: 85 },
   { skill: "Microsoft Excel", proficiency: 92 },
-  { skill: "DJI Drone Operations", proficiency: 80 },
+  { skill: "DJI Drone Operations", proficiency: 85 },
 ];
 
 const tools = [
