@@ -15,7 +15,7 @@ export function Hero() {
             <div className="space-y-4">
               <p className="text-muted-foreground">Hello, I&apos;m</p>
               <h1 className="text-5xl lg:text-6xl">Olafimihan Oladele</h1>
-              <h2 className="text-3xl lg:text-4xl text-primary/80">Data Analyst</h2>
+              <h2 className="text-3xl lg:text-4xl text-primary/80">Project Manager | Data Analyst</h2>
               <p className="text-muted-foreground max-w-lg">
                 Transforming complex data into actionable insights. Specialized in data visualization, 
                 statistical analysis, and business intelligence to drive data-driven decision making.
@@ -41,7 +41,7 @@ export function Hero() {
             </div>
 
             <div className="flex gap-3 pt-4">
-              <Link
+              {/* <Link
                 href="https://x.com/deleolafimihan?s=21"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -54,7 +54,7 @@ export function Hero() {
                 >
                   <FaXTwitter className="w-5 h-5" />
                 </Button>
-              </Link>
+              </Link> */}
 
               {/* LinkedIn */}
               <Link

@@ -13,10 +13,10 @@ import {
 
 const expertise = [
   {
-    icon: BarChart3,
-    title: "Data Analysis",
+    icon: ClipboardList,
+    title: "Project Management",
     description:
-      "Transforming raw data into clear insights that support smart business decisions using Power BI, Excel, and advanced visualization tools.",
+      "Efficiently planning, coordinating, and executing projects using proven methodologies to meet timelines and objectives.",
   },
   {
     icon: Database,
@@ -25,16 +25,16 @@ const expertise = [
       "Skilled in organizing, cleaning, and maintaining datasets for seamless analytics and long-term accessibility.",
   },
   {
+    icon: BarChart3,
+    title: "Data Analysis",
+    description:
+      "Transforming raw data into clear insights that support smart business decisions using Power BI, Excel, and advanced visualization tools.",
+  },
+  {
     icon: Plane,
     title: "DJI Drone Pilot",
     description:
       "Certified drone pilot experienced in data capture, mapping, and aerial analysis for projects and site evaluations.",
-  },
-  {
-    icon: ClipboardList,
-    title: "Project Management",
-    description:
-      "Efficiently planning, coordinating, and executing projects using proven methodologies to meet timelines and objectives.",
   },
   {
     icon: PieChart,
@@ -76,8 +76,8 @@ export function About() {
             className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed"
           >
             I’m a detail-oriented{" "}
-            <span className="font-semibold text-primary">Data Analyst</span> and{" "}
-            <span className="font-semibold text-primary">Project Manager</span>{" "}
+            <span className="font-semibold text-primary">Project Manager</span> and{" "}
+            <span className="font-semibold text-primary">Data Analyst</span>{" "}
             who brings clarity to data and precision to every project. I combine
             analytics, visualization, and real-world insights to drive
             performance and deliver measurable impact.

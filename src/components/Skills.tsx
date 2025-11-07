@@ -6,9 +6,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 const skillsData = [
+  { skill: "Project Management", proficiency: 92 },
   { skill: "Data Analysis", proficiency: 95 },
   { skill: "Data Management", proficiency: 90 },
-  { skill: "Project Management", proficiency: 88 },
   { skill: "Power BI", proficiency: 85 },
   { skill: "Microsoft Excel", proficiency: 92 },
   { skill: "DJI Drone Operations", proficiency: 85 },
@@ -208,22 +208,6 @@ export function Skills() {
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    <h4 className="font-semibold mb-2 flex items-center gap-2">
-                      <span className="w-1 h-4 bg-primary rounded-full"></span>
-                      Data Analytics & Management
-                    </h4>
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      Skilled in transforming raw data into actionable insights,
-                      maintaining data integrity, and building efficient
-                      management systems that improve decision accuracy.
-                    </p>
-                  </motion.div>
-
-                  <motion.div
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.5 }}
                   >
                     <h4 className="font-semibold mb-2 flex items-center gap-2">
@@ -234,6 +218,22 @@ export function Skills() {
                       Experienced in leading multidisciplinary teams,
                       supervising construction and analytical projects, and
                       delivering high-impact outcomes on time and within scope.
+                    </p>
+                  </motion.div>
+
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    <h4 className="font-semibold mb-2 flex items-center gap-2">
+                      <span className="w-1 h-4 bg-primary rounded-full"></span>
+                      Data Analytics & Management
+                    </h4>
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      Skilled in transforming raw data into actionable insights,
+                      maintaining data integrity, and building efficient
+                      management systems that improve decision accuracy.
                     </p>
                   </motion.div>
 
