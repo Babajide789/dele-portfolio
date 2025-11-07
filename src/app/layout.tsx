@@ -1,11 +1,12 @@
 
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/features/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
+import FloatingThemeToggle from "@/components/features/FloatingToggle";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -72,6 +73,8 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dele-portfolio.vercel.app/"),
 };
 
+
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -90,6 +93,7 @@ export default function RootLayout({
         >
           <Navbar />
           {children}
+          <FloatingThemeToggle />
           <Analytics />
         </ThemeProvider>
       </body>
