@@ -1,9 +1,11 @@
+"use client";
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
+import { ThemeProvider } from "@/components/features/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -68,7 +70,6 @@ export const metadata: Metadata = {
     canonical: "https://dele-portfolio.vercel.app/",
   },
   metadataBase: new URL("https://dele-portfolio.vercel.app/"),
-
 };
 
 export default function RootLayout({
@@ -77,13 +78,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        {children}
-        <Analytics/>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          {children}
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
