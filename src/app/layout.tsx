@@ -7,6 +7,7 @@ import { ThemeProvider } from "@/components/features/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import FloatingThemeToggle from "@/components/features/FloatingToggle";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
