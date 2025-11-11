@@ -60,7 +60,7 @@ export const metadata: Metadata = {
         url: "https://dele-portfolio.vercel.app/og-thumbnail-dark.png",
         width: 1200,
         height: 630,
-        alt: "Dele Olafimihan – Data Analyst Portfolio Thumbnail (Dark Mode)",
+        alt: "Dele Olafimihan – Project Manager & Data Analyst Portfolio Thumbnail (Dark Mode)",
       },
     ],
     locale: "en_US",
