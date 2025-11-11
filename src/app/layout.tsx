@@ -56,12 +56,6 @@ export const metadata: Metadata = {
         height: 630,
         alt: "Peter Olafimihan – Project Manager & Data Analyst Portfolio Thumbnail",
       },
-      {
-        url: "https://dele-portfolio.vercel.app/og-thumbnail-dark.png",
-        width: 1200,
-        height: 630,
-        alt: "Dele Olafimihan – Project Manager & Data Analyst Portfolio Thumbnail (Dark Mode)",
-      },
     ],
     locale: "en_US",
     type: "website",
@@ -74,7 +68,6 @@ export const metadata: Metadata = {
       "Data Analyst & Project Manager helping businesses turn data into action. Explore dashboards, analytics, and impact-driven insights.",
     images: [
       "https://dele-portfolio.vercel.app/og-thumbnail-light.png",
-      "https://dele-portfolio.vercel.app/og-thumbnail-dark.png",
     ],
     creator: "@deleolafimihan",
   },
