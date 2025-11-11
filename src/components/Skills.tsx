@@ -6,22 +6,22 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 
 const skillsData = [
-  { skill: "Project Management", proficiency: 92 },
-  { skill: "Data Analysis", proficiency: 95 },
-  { skill: "Data Management", proficiency: 90 },
-  { skill: "Power BI", proficiency: 85 },
-  { skill: "Microsoft Excel", proficiency: 92 },
-  { skill: "DJI Drone Operations", proficiency: 85 },
+  { skill: "Project Management", proficiency: 90 },
+  { skill: "Data Management", proficiency: 85 },
+  { skill: "Data Analysis", proficiency: 80 },
+  { skill: "Power BI", proficiency: 80 },
+  { skill: "Microsoft Office Suite", proficiency: 85 },
+  { skill: "DJI Drone Operations", proficiency: 95 },
 ];
 
 const tools = [
   "Power BI",
-  "Excel",
+  "Microsoft Excel",
   "Microsoft Project Planner",
-  "Word",
-  "PowerPoint",
   "Data Analytics",
   "Data Cleaning",
+  "Word",
+  "PowerPoint",
   "Drone Mapping",
   "Stakeholder Reporting",
   "Team Coordination",
@@ -247,7 +247,7 @@ export function Skills() {
                       Drone Mapping & Field Operations
                     </h4>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      Certified DJI Drone Pilot with hands-on experience in
+                      Skilled DJI Drone Pilot with hands-on experience in
                       aerial mapping, data acquisition, and visual inspection
                       for infrastructure and land projects.
                     </p>

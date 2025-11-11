@@ -34,7 +34,7 @@ const expertise = [
     icon: Plane,
     title: "DJI Drone Pilot",
     description:
-      "Certified drone pilot experienced in data capture, mapping, and aerial analysis for projects and site evaluations.",
+      "Skilled drone pilot experienced in data capture, mapping, and aerial analysis for projects and site evaluations.",
   },
   {
     icon: PieChart,
@@ -75,12 +75,18 @@ export function About() {
             viewport={{ once: true }}
             className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed"
           >
-            I’m a detail-oriented{" "}
+            I&apos;m a result-driven professional who manages full project life cycles 
+            from conception to completion. I analyze large datasets to identify trends, 
+            combining analysis, visualization and insights to drive performance, 
+            decision making and deliver measurable impact.
+
+
+            {/* I’m a detail-oriented{" "}
             <span className="font-semibold text-primary">Project Manager</span> and{" "}
             <span className="font-semibold text-primary">Data Analyst</span>{" "}
             who brings clarity to data and precision to every project. I combine
             analytics, visualization, and real-world insights to drive
-            performance and deliver measurable impact.
+            performance and deliver measurable impact. */}
           </motion.p>
         </div>
 

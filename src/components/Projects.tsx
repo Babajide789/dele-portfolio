@@ -1,86 +1,52 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "./ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { ExternalLink } from "lucide-react";
 
-const projects = [
+const projectGroups = [
   {
-    title: "Del Arete Project Professionals – Residential Construction",
-    description:
-      "Supervised and executed two large-scale residential building projects from foundation to finishing, ensuring quality control, cost management, and timely delivery.",
-    images: [
-      "/projects/del-arete-residential1.jpg",
-      "/projects/del-arete-residential2.jpg",
-      "/projects/del-arete-residential3.jpg",
+    organization: "Del Arete Project Professionals",
+    projects: [
+      "Residential Construction A – Ibadan",
+      "Residential Construction B – Ibadan",
+      "Renovation and Water Supply – Beach Resort, Lagos",
+      "Residential Remodeling and Renovation – Elewura, Ibadan",
+      "Renovation of Classroom and Furniture Supply – IGS Old Students Association, Ibadan",
+      "Renovation of Classroom Block – Itire, Lagos",
     ],
-    tags: ["Project Management", "Construction Supervision", "Client Reporting"],
-    impact: "Delivered both projects 2 weeks ahead of schedule while maintaining 100% client satisfaction.",
+    description:
+      "Led multiple residential and renovation projects with a focus on cost efficiency, material management, and client satisfaction.",
+    impact:
+      "Improved workflow coordination and reduced project downtime by integrating progress analytics into supervision routines.",
+    tags: ["Construction Management", "Cost Efficiency", "Performance Analytics"],
   },
   {
-    title: "Del Arete Project Professionals – Renovation Works",
-    description:
-      "Led four renovation and remodelling projects focused on space optimization and modern design transformation across both commercial and residential spaces.",
-    images: [
-      "/projects/del-arete-renovation1.jpg",
-      "/projects/del-arete-renovation2.jpg",
-      "/projects/del-arete-renovation3.jpg",
+    organization: "Special Committee on Rehabilitation of Public Schools (SCRPS)",
+    projects: [
+      "Infrastructure Upgrade – Tolu Complex, Lagos",
+      "Construction of an Innovative Vocational School – Lagos State Model College, Meiran",
+      "Rehabilitation of the School for the Visually Impaired – Festac Town, Lagos",
     ],
-    tags: ["Interior Design", "Cost Planning", "Quality Assurance"],
-    impact: "Improved project delivery efficiency by 40% through process optimization.",
+    description:
+      "Coordinated education infrastructure upgrades with emphasis on compliance, reporting accuracy, and stakeholder communication.",
+    impact:
+      "Delivered quality-driven public projects enhancing accessibility and infrastructure sustainability across Lagos State.",
+    tags: ["Public Infrastructure", "Stakeholder Reporting", "Data-Driven Oversight"],
   },
   {
-    title: "SCRPS – Tolu Complex Supervision & Executive Reporting",
-    description:
-      "Coordinated supervision, site evaluation, and executive-level project reporting for a complex mixed-use development. Managed contractors and progress tracking using Power BI dashboards.",
-    images: [
-      "/projects/scrps-tolu1.jpg",
-      "/projects/scrps-tolu2.jpg",
-      "/projects/scrps-tolu3.jpg",
+    organization: "Dayola Property and Development Company (DPDC)",
+    projects: [
+      "Heirs Park Residences",
+      "Cornaview Apartments",
     ],
-    tags: ["Supervision", "Executive Reporting", "Power BI"],
-    impact: "Enhanced reporting accuracy and transparency, driving faster decision-making by 25%.",
+    description:
+      "Supervised residential development projects, managing quality control, progress tracking, and data-informed reporting for timely delivery.",
+    impact:
+      "Achieved consistent on-schedule completion and optimized project resource allocation through effective monitoring.",
+    tags: ["Project Supervision", "Data Reporting", "Residential Construction"],
   },
 ];
-
-function AutoCarousel({ images }: { images: string[] }) {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(
-      () => setIndex((prev) => (prev + 1) % images.length),
-      3000 // duration for each image (3 seconds)
-    );
-    return () => clearInterval(interval);
-  }, [images.length]);
-
-  return (
-    <div className="relative aspect-video overflow-hidden rounded-t-lg">
-      {images.map((src, i) => (
-        <motion.div
-          key={i}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: i === index ? 1 : 0 }}
-          transition={{ duration: 0.8 }}
-          className="absolute inset-0"
-        >
-          <Image
-            src={src}
-            alt={`Project image ${i + 1}`}
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 50vw"
-            priority={i === 0}
-          />
-        </motion.div>
-      ))}
-    </div>
-  );
-}
 
 export function Projects() {
   return (
@@ -88,7 +54,7 @@ export function Projects() {
       id="projects"
       className="py-20 px-6 bg-linear-to-b from-background via-muted/40 to-background"
     >
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -96,7 +62,7 @@ export function Projects() {
             transition={{ duration: 0.6 }}
             className="text-4xl font-bold mb-4"
           >
-            Featured Projects
+            Projects Led
           </motion.h2>
           <motion.p
             initial={{ opacity: 0 }}
@@ -104,50 +70,52 @@ export function Projects() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-muted-foreground max-w-2xl mx-auto text-lg"
           >
-            A selection of impactful projects that reflect precision, creativity, and data-driven supervision.
+            A concise summary of successfully managed and data-informed projects across residential,
+            commercial, and public infrastructure sectors.
           </motion.p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-10">
-          {projects.map((project, index) => (
+          {projectGroups.map((group, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.2, duration: 0.7 }}
             >
-              <Card className="overflow-hidden border-border/40 hover:shadow-2xl transition-all bg-background/70 backdrop-blur-sm">
-                {/* Auto-sliding gallery */}
-                <AutoCarousel images={project.images} />
-
+              <Card className="border-border/40 hover:shadow-xl transition-all bg-background/70 backdrop-blur-sm">
                 <CardHeader>
-                  <CardTitle>{project.title}</CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
+                  <CardTitle className="text-xl font-semibold mb-2">
+                    {group.organization}
+                  </CardTitle>
                 </CardHeader>
 
                 <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="outline">
+                  <ul className="list-disc list-inside space-y-1 mb-4 text-sm">
+                    {group.projects.map((proj, i) => (
+                      <li key={i}>{proj}</li>
+                    ))}
+                  </ul>
+
+                  <p className="text-muted-foreground mb-3 text-sm">
+                    {group.description}
+                  </p>
+
+                  <div className="bg-primary/5 rounded-lg p-3 mb-3">
+                    <p className="text-sm">
+                      <span className="text-primary font-medium">Impact:</span>{" "}
+                      {group.impact}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-wrap gap-2">
+                    {group.tags.map((tag, i) => (
+                      <Badge key={i} variant="outline">
                         {tag}
                       </Badge>
                     ))}
                   </div>
-                  <div className="bg-primary/5 rounded-lg p-3">
-                    <p className="text-sm leading-relaxed">
-                      <span className="text-primary font-medium">Impact:</span> {project.impact}
-                    </p>
-                  </div>
                 </CardContent>
-
-                <CardFooter>
-                  <Button asChild size="sm" variant="outline" className="gap-2">
-                    <a href="#contact">
-                      <ExternalLink className="w-4 h-4" />
-                      Learn More
-                    </a>
-                  </Button>
-                </CardFooter>
               </Card>
             </motion.div>
           ))}

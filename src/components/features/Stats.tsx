@@ -4,10 +4,10 @@ import CountUp from "react-countup"
 import { useInView } from "react-intersection-observer"
 
 const stats = [
-  { num: 18, text: "+ Years of experience" },
+  { num: 15, text: "+ Years of experience" },
   { num: 25, text: "+ Projects Completed" },
   { num: 10, text: "Technologies mastered" },
-//   { num: 120, text: " + Code Commits" },
+  // { num: 120, text: "+ Code Commits" },
 ]
 
 export default function Stats() {
@@ -40,13 +40,13 @@ function StatItem({ num, text }: { num: number; text: string }) {
           end={num}
           duration={3}
           delay={0.3}
-          className="text-4xl xl:text-6xl font-extrabold"
+          className="text-4xl xl:text-6xl font-extrabold text-foreground"
         />
       )}
       <p
         className={`${
           text.length < 15 ? "max-w-[100px]" : "max-w-[150px]"
-        } leading-snug text-black/80`}
+        } leading-snug text-muted-foreground`}
       >
         {text}
       </p>

@@ -14,11 +14,14 @@ export function Hero() {
           <div className="space-y-6">
             <div className="space-y-4">
               <p className="text-muted-foreground">Hello, I&apos;m</p>
-              <h1 className="text-5xl lg:text-6xl">Olafimihan Oladele</h1>
+              <h1 className="text-5xl lg:text-6xl">Peter Olafimihan <span>PMP</span></h1>
+
               <h2 className="text-3xl lg:text-4xl text-primary/80">Project Manager | Data Analyst</h2>
               <p className="text-muted-foreground max-w-lg">
-                Transforming complex data into actionable insights. Specialized in data visualization, 
-                statistical analysis, and business intelligence to drive data-driven decision making.
+                Hybrid professional skilled in project management methodologies, execution and technical depth of Data analysis. 
+
+                {/* Transforming complex data into actionable insights. Specialized in data visualization, 
+                statistical analysis, and business intelligence to drive data-driven decision making. */}
               </p>
             </div>
 
@@ -29,7 +32,7 @@ export function Hero() {
                   </Button>
                 </Link>
 
-               <Link
+                <Link
                   href="/Oladele-Peter-Olafimihan-Construction-PM.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
