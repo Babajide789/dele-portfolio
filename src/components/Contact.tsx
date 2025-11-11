@@ -5,7 +5,6 @@ import { Textarea } from "./ui/textarea";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 
-
 export function Contact() {
   return (
     <section id="contact" className="py-20 px-6">

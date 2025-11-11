@@ -7,7 +7,6 @@ import { ThemeProvider } from "@/components/features/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import FloatingThemeToggle from "@/components/features/FloatingToggle";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -19,40 +18,49 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Data Analyst Portfolio | Expert in Data Analytics, Power BI & Project Management",
+  title:
+    "Peter Olafimihan | Project Manager & Data Analyst | Power BI • Excel • Data Visualization",
   description:
-    "Explore the portfolio of a skilled Data Analyst proficient in Data Analysis, Power BI, Excel, Project Management, and Drone Mapping. Transforming raw data into actionable insights for business growth.",
+    "Peter Olafimihan is a Data Analyst and Project Manager skilled in Power BI, Excel, and Data Visualization. Helping businesses make smarter decisions through clear insights, analytics, and measurable impact.",
   keywords: [
     "Data Analyst Portfolio",
-    "Data Analytics Expert",
-    "Power BI Dashboard Developer",
-    "Business Intelligence Analyst",
-    "Data Visualization Specialist",
-    "Microsoft Excel Professional",
-    "Data Management Expert",
-    "Project Management with Data Insights",
-    "DJI Drone Mapping Analyst",
-    "Data-driven Decision Making",
-    "Freelance Data Analyst",
-    "Data Reporting and Visualization",
-    "Analyst for Business Intelligence",
+    "Dele Olafimihan",
+    "Power BI Expert",
     "Excel Dashboard Developer",
-    "Power BI Consultant",
+    "Data Visualization Specialist",
+    "Business Intelligence Analyst",
+    "Project Management Analytics",
+    "Construction Data Insights",
+    "Data Analytics Portfolio",
+    "Drone Mapping with Data Analysis",
+    "Data Reporting and Visualization",
+    "BI Consultant",
     "Data Storytelling",
+    "Performance Analytics",
   ],
-  authors: [{ name: "Your Client’s Full Name" }],
+  authors: [{ name: "Peter Olafimihan" }],
+  creator: "Peter Olafimihan",
+  publisher: "Peter Olafimihan",
+  category: "Data Analytics Portfolio",
   openGraph: {
-    title: "Data Analyst Portfolio | Power BI, Excel, and Project Management Expertise",
+    title:
+      "Peter Olafimihan | Project Manager & & Data Analyst | Power BI • Excel • Visualization",
     description:
-      "Professional Data Analyst specializing in Data Visualization, Power BI Dashboards, Excel Analytics, and Project Leadership. Turning data into measurable business results.",
+      "Explore Peter Olafimihan’s professional portfolio — showcasing Power BI dashboards, Excel reports, and data-driven project management that transforms raw data into business clarity.",
     url: "https://dele-portfolio.vercel.app/",
-    siteName: "Data Analyst Portfolio",
+    siteName: "Peter Olafimihan | Project Manager & Data Analyst Portfolio",
     images: [
       {
-        url: "https://dele-portfolio.vercel.app/og-image.png",
+        url: "https://dele-portfolio.vercel.app/og-thumbnail-light.png",
         width: 1200,
         height: 630,
-        alt: "Data Analyst Portfolio – Power BI, Excel, Project Management",
+        alt: "Peter Olafimihan – Project Manager & Data Analyst Portfolio Thumbnail",
+      },
+      {
+        url: "https://dele-portfolio.vercel.app/og-thumbnail-dark.png",
+        width: 1200,
+        height: 630,
+        alt: "Dele Olafimihan – Data Analyst Portfolio Thumbnail (Dark Mode)",
       },
     ],
     locale: "en_US",
@@ -61,10 +69,13 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Data Analyst Portfolio | Power BI, Excel, and Data Visualization Expert",
+      "Dele Olafimihan | Data Analyst & Project Manager | Power BI • Excel • Visualization",
     description:
-      "Explore data visualization, analytics, and reporting projects by an expert Data Analyst. Transforming data into insight and clarity.",
-    images: ["/og-image.png"],
+      "Data Analyst & Project Manager helping businesses turn data into action. Explore dashboards, analytics, and impact-driven insights.",
+    images: [
+      "https://dele-portfolio.vercel.app/og-thumbnail-light.png",
+      "https://dele-portfolio.vercel.app/og-thumbnail-dark.png",
+    ],
     creator: "@deleolafimihan",
   },
   alternates: {
@@ -72,7 +83,6 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://dele-portfolio.vercel.app/"),
 };
-
 
 
 export default function RootLayout({

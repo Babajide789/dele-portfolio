@@ -1,5 +1,6 @@
 import Image from "next/image";
 
+
 export default function ProfileImage() {
   return (
     <div className="relative aspect-square rounded-2xl overflow-hidden bg-linear-to-br from-primary/10 to-accent/30">
@@ -10,7 +11,7 @@ export default function ProfileImage() {
         className="object-cover rounded-2xl"
         priority
         style={{
-          objectPosition: "center top", // Adjust this to focus on important parts
+          objectPosition: "center top",
         }}
       />
     </div>

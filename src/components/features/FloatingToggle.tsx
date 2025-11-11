@@ -7,13 +7,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
 
-
 export default function FloatingThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [visible, setVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // Detect scroll direction
+  // To detect scroll direction
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
