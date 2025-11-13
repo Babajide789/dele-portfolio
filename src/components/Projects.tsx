@@ -36,7 +36,7 @@ const projectGroups: ProjectGroup[] = [
       "Residential Construction B – Ibadan",
       "Residential Remodeling and Renovation – Elewura, Ibadan",
     ],
-    images: ["/projects/residential/renovation3D.jpg", "/projects/residential/del-arete-renovation1.jpg", "/projects/residential/residential1.jpg", "/projects/residential/residential3.jpg", "/projects/residential/residential4.jpg", "/projects/residential/residential5.jpg"],
+    images: ["/projects/residential/renovation3D.jpg", "/projects/residential/residential1.jpg", "/projects/residential/del-arete-renovation3.jpg", "/projects/residential/residential4.jpg", "/projects/residential/residential5.jpg"],
     description:
       "Led multiple residential and renovation projects with a focus on cost efficiency, material management, and client satisfaction.",
     impact:
@@ -64,7 +64,7 @@ const projectGroups: ProjectGroup[] = [
       "Renovation of Classroom and Furniture Supply – IGS Old Students Association, Ibadan",
       "Renovation of Classroom Block – Itire, Lagos",
     ],
-    images: ["/projects/renovation/renovations1.jpg", "/projects/renovation/renov-school1.jpg", "/projects/renovation/renov-school2.jpg", "/projects/renovation/renovation5.jpg"],
+    images: ["/projects/renovation/renovations1.jpg", "/projects/renovation/residential3.jpg", "/projects/renovation/residential2.jpg", "/projects/renovation/renov-school2.jpg", "/projects/renovation/renovation5.jpg", "/projects/renovation/renov-school4.jpg", "/projects/renovation/renov-school3.jpg"],
     description:
       "Managed renovation and infrastructure improvement works across educational and hospitality facilities, ensuring operational upgrades and sustainable resource planning during construction phases.",
     impact:
@@ -160,7 +160,7 @@ export function Projects() {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-muted-foreground max-w-2xl mx-auto text-lg"
           >
-            A concise summary of successfully managed and data-informed projects across residential,
+            A concise summary of successfully managed projects across residential,
             commercial, and public infrastructure sectors.
           </motion.p>
         </div>
