@@ -84,16 +84,11 @@ function ProjectCarousel({ images }: ProjectCarouselProps) {
 
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
 
-  const scrollPrev = useCallback(() => {
-    if (emblaApi) emblaApi.scrollPrev();
-  }, [emblaApi]);
-
-  const scrollNext = useCallback(() => {
-    if (emblaApi) emblaApi.scrollNext();
-  }, [emblaApi]);
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
 
   useEffect(() => {
-    if (emblaApi) emblaApi.reInit();
+    emblaApi?.reInit();
   }, [emblaApi]);
 
   return (
@@ -101,7 +96,7 @@ function ProjectCarousel({ images }: ProjectCarouselProps) {
       {/* Carousel Container */}
       <div className="overflow-hidden rounded-xl" ref={emblaRef}>
         <div className="flex">
-          {images.map((src: string, i: number) => (
+          {images.map((src, i) => (
             <div key={i} className="relative min-w-full h-56 md:h-64 shrink-0">
               <Image
                 src={src}
@@ -115,20 +110,30 @@ function ProjectCarousel({ images }: ProjectCarouselProps) {
         </div>
       </div>
 
-      {/* Navigation Arrows */}
-      <button
+      {/* Navigation Arrows with Framer Motion animation */}
+      <motion.button
         onClick={scrollPrev}
-        className="absolute top-1/2 -translate-y-1/2 left-3 bg-background/70 hover:bg-background/90 backdrop-blur-sm p-2 rounded-full shadow-md transition opacity-0 group-hover:opacity-100"
+        initial={{ opacity: 0, x: -20 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="absolute top-1/2 -translate-y-1/2 left-3 bg-background/70 hover:bg-background/90 backdrop-blur-sm p-2 rounded-full shadow-md hidden group-hover:flex"
       >
         <ChevronLeft className="w-5 h-5 text-primary" />
-      </button>
+      </motion.button>
 
-      <button
+      <motion.button
         onClick={scrollNext}
-        className="absolute top-1/2 -translate-y-1/2 right-3 bg-background/70 hover:bg-background/90 backdrop-blur-sm p-2 rounded-full shadow-md transition opacity-0 group-hover:opacity-100"
+        initial={{ opacity: 0, x: 20 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.4, ease: "easeOut" }}
+        className="absolute top-1/2 -translate-y-1/2 right-3 bg-background/70 hover:bg-background/90 backdrop-blur-sm p-2 rounded-full shadow-md hidden group-hover:flex"
       >
         <ChevronRight className="w-5 h-5 text-primary" />
-      </button>
+      </motion.button>
     </div>
   );
 }
@@ -176,20 +181,17 @@ export function Projects() {
                 </CardHeader>
 
                 <CardContent>
-                  {/* Image Carousel */}
                   <div className="mb-4">
                     <ProjectCarousel images={group.images} />
                   </div>
 
                   <ul className="list-disc list-inside space-y-1 mb-4 text-sm">
-                    {group.projects.map((proj: string, i: number) => (
+                    {group.projects.map((proj, i) => (
                       <li key={i}>{proj}</li>
                     ))}
                   </ul>
 
-                  <p className="text-muted-foreground mb-3 text-sm">
-                    {group.description}
-                  </p>
+                  <p className="text-muted-foreground mb-3 text-sm">{group.description}</p>
 
                   <div className="bg-primary/5 rounded-lg p-3 mb-3">
                     <p className="text-sm">
@@ -199,7 +201,7 @@ export function Projects() {
                   </div>
 
                   <div className="flex flex-wrap gap-2">
-                    {group.tags.map((tag: string, i: number) => (
+                    {group.tags.map((tag, i) => (
                       <Badge key={i} variant="outline">
                         {tag}
                       </Badge>

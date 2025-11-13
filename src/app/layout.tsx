@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     siteName: "Peter Olafimihan | Project Manager & Data Analyst Portfolio",
     images: [
       {
-        url: "https://dele-portfolio.vercel.app/og-thumbnail-light-theme.png",
+        url: "https://dele-portfolio.vercel.app/oog-thumbnail-light-theme.png",
         width: 1200,
         height: 630,
         alt: "Peter Olafimihan – Project Manager & Data Analyst Portfolio Thumbnail",
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     description:
       "Data Analyst & Project Manager helping businesses turn data into action. Explore dashboards, analytics, and impact-driven insights.",
     images: [
-      "https://dele-portfolio.vercel.app/og-thumbnail-light-theme.png",
+      "https://dele-portfolio.vercel.app/oog-thumbnail-light-theme.png",
     ],
     creator: "@deleolafimihan",
   },
