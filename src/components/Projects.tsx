@@ -36,7 +36,7 @@ const projectGroups: ProjectGroup[] = [
       "Residential Construction B – Ibadan",
       "Residential Remodeling and Renovation – Elewura, Ibadan",
     ],
-    images: ["/projects/residential1.jpg", "/projects/residential2.jpg", "/projects/residential3.jpg"],
+    images: ["/projects/residential/renovation3D.jpg", "/projects/residential/del-arete-renovation1.jpg", "/projects/residential/residential1.jpg", "/projects/residential/residential3.jpg", "/projects/residential/residential4.jpg", "/projects/residential/residential5.jpg"],
     description:
       "Led multiple residential and renovation projects with a focus on cost efficiency, material management, and client satisfaction.",
     impact:
@@ -50,7 +50,7 @@ const projectGroups: ProjectGroup[] = [
       "Construction of an Innovative Vocational School – Lagos State Model College, Meiran",
       "Rehabilitation of the School for the Visually Impaired – Festac Town, Lagos",
     ],
-    images: ["/projects/scrpss1.jpg", "/projects/scrps2.jpg", "/projects/scrps3.jpg"],
+    images: ["/projects/scrps/scrps2.jpg", "/projects/scrps/scrps4.jpg"],
     description:
       "Coordinated education infrastructure upgrades with emphasis on compliance, reporting accuracy, and stakeholder communication.",
     impact:
@@ -64,7 +64,7 @@ const projectGroups: ProjectGroup[] = [
       "Renovation of Classroom and Furniture Supply – IGS Old Students Association, Ibadan",
       "Renovation of Classroom Block – Itire, Lagos",
     ],
-    images: ["/projects/renovations1.jpg", "/projects/renovation2.jpg", "/projects/renovation3.jpg", "/projects/renovation4.jpg"],
+    images: ["/projects/renovation/renovations1.jpg", "/projects/renovation/renov-school1.jpg", "/projects/renovation/renov-school2.jpg", "/projects/renovation/renovation5.jpg"],
     description:
       "Managed renovation and infrastructure improvement works across educational and hospitality facilities, ensuring operational upgrades and sustainable resource planning during construction phases.",
     impact:
