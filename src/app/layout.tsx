@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/features/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import FloatingThemeToggle from "@/components/features/FloatingToggle";
 
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -84,7 +85,6 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* ✅ Additional dynamic theme meta images for social previews */}
         <meta
           property="og:image"
           content="https://dele-portfolio.vercel.app/oog-thumbnail-light-theme.png"
