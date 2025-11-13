@@ -22,7 +22,7 @@ const projectGroups: ProjectGroup[] = [
   {
     organization: "Dayola Property and Development Company (DPDC)",
     projects: ["Heirs Park Residences", "Cornaview Apartments"],
-    images: ["/projects/dpdc1.jpg", "/projects/dpdc2.jpg", "/projects/dpdc3.jpg"],
+    images: ["/projects/dpdc/dpdc1.jpg", "/projects/dpdc/dpdc3.jpg", "/projects/dpdc/dpdc2.jpg", "/projects/dpdc/dpdc4.jpg"],
     description:
       "Supervised residential development projects, managing quality control, progress tracking, and data-informed reporting for timely delivery.",
     impact:
