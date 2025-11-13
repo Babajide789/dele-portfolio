@@ -1,4 +1,3 @@
-
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -6,7 +5,6 @@ import { Navbar } from "@/components/Navbar";
 import { ThemeProvider } from "@/components/features/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import FloatingThemeToggle from "@/components/features/FloatingToggle";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +23,7 @@ export const metadata: Metadata = {
     "Peter Olafimihan is a Data Analyst and Project Manager skilled in Power BI, Excel, and Data Visualization. Helping businesses make smarter decisions through clear insights, analytics, and measurable impact.",
   keywords: [
     "Data Analyst Portfolio",
-    "Dele Olafimihan",
+    "Peter Olafimihan",
     "Power BI Expert",
     "Excel Dashboard Developer",
     "Data Visualization Specialist",
@@ -45,14 +43,14 @@ export const metadata: Metadata = {
   category: "Data Analytics Portfolio",
   openGraph: {
     title:
-      "Peter Olafimihan | Project Manager & & Data Analyst | Power BI • Excel • Visualization",
+      "Peter Olafimihan | Project Manager & Data Analyst | Power BI • Excel • Visualization",
     description:
       "Explore Peter Olafimihan’s professional portfolio — showcasing Power BI dashboards, Excel reports, and data-driven project management that transforms raw data into business clarity.",
     url: "https://dele-portfolio.vercel.app/",
     siteName: "Peter Olafimihan | Project Manager & Data Analyst Portfolio",
     images: [
       {
-        url: "https://dele-portfolio.vercel.app/oog-thumbnail-light.png",
+        url: "https://dele-portfolio.vercel.app/oog-thumbnail-light-theme.png",
         width: 1200,
         height: 630,
         alt: "Peter Olafimihan – Project Manager & Data Analyst Portfolio Thumbnail",
@@ -64,11 +62,11 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Dele Olafimihan | Data Analyst & Project Manager | Power BI • Excel • Visualization",
+      "Peter Olafimihan | Data Analyst & Project Manager | Power BI • Excel • Visualization",
     description:
       "Data Analyst & Project Manager helping businesses turn data into action. Explore dashboards, analytics, and impact-driven insights.",
     images: [
-      "https://dele-portfolio.vercel.app/oog-thumbnail-light.png",
+      "https://dele-portfolio.vercel.app/oog-thumbnail-light-theme.png",
     ],
     creator: "@deleolafimihan",
   },
@@ -78,7 +76,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://dele-portfolio.vercel.app/"),
 };
 
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -86,6 +83,29 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* ✅ Additional dynamic theme meta images for social previews */}
+        <meta
+          property="og:image"
+          content="https://dele-portfolio.vercel.app/oog-thumbnail-light-theme.png"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          property="og:image"
+          content="https://dele-portfolio.vercel.app/oog-thumbnail-dark-theme.png"
+          media="(prefers-color-scheme: dark)"
+        />
+        <meta
+          name="twitter:image"
+          content="https://dele-portfolio.vercel.app/oog-thumbnail-light-theme.png"
+          media="(prefers-color-scheme: light)"
+        />
+        <meta
+          name="twitter:image"
+          content="https://dele-portfolio.vercel.app/oog-thumbnail-dark-theme.png"
+          media="(prefers-color-scheme: dark)"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
