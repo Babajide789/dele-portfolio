@@ -6,7 +6,6 @@ import { ThemeProvider } from "@/components/features/ThemeProvider";
 import { Analytics } from "@vercel/analytics/next";
 import FloatingThemeToggle from "@/components/features/FloatingToggle";
 
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -51,7 +50,7 @@ export const metadata: Metadata = {
     siteName: "Peter Olafimihan | Project Manager & Data Analyst Portfolio",
     images: [
       {
-        url: "https://dele-portfolio.vercel.app/thumbnail-light.png",
+        url: "https://dele-portfolio.vercel.app/thumbnail-dark.png",
         width: 1200,
         height: 630,
         alt: "Peter Olafimihan – Project Manager & Data Analyst Portfolio Thumbnail",
@@ -67,7 +66,7 @@ export const metadata: Metadata = {
     description:
       "Data Analyst & Project Manager helping businesses turn data into action. Explore dashboards, analytics, and impact-driven insights.",
     images: [
-      "https://dele-portfolio.vercel.app/thumbnail-light.png",
+      "https://dele-portfolio.vercel.app/thumbnail-dark.png",
     ],
     creator: "@deleolafimihan",
   },
@@ -87,23 +86,11 @@ export default function RootLayout({
       <head>
         <meta
           property="og:image"
-          content="https://dele-portfolio.vercel.app/thumbnail-light.png"
-          media="(prefers-color-scheme: light)"
-        />
-        <meta
-          property="og:image"
           content="https://dele-portfolio.vercel.app/thumbnail-dark.png"
-          media="(prefers-color-scheme: dark)"
-        />
-        <meta
-          name="twitter:image"
-          content="https://dele-portfolio.vercel.app/thumbnail-light.png"
-          media="(prefers-color-scheme: light)"
         />
         <meta
           name="twitter:image"
           content="https://dele-portfolio.vercel.app/thumbnail-dark.png"
-          media="(prefers-color-scheme: dark)"
         />
       </head>
       <body
