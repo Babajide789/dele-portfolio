@@ -20,7 +20,7 @@ export default function Home () {
       <footer className="bg-muted/50 border-t border-border py-8 px-6">
         <div className="max-w-7xl mx-auto text-center text-sm text-muted-foreground">
           <p>© 2025 Olafimihan Oladele. All rights reserved.</p>
-          <p className="mt-2">Transforming data into actionable insights</p>
+          <p className="mt-2">Great things happen with Project Management</p>
         </div>
       </footer>
     </div>

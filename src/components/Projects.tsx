@@ -22,7 +22,12 @@ const projectGroups: ProjectGroup[] = [
   {
     organization: "Dayola Property and Development Company (DPDC)",
     projects: ["Heirs Park Residences", "Cornaview Apartments"],
-    images: ["/projects/dpdc/dpdc1.jpg", "/projects/dpdc/dpdc3.jpg", "/projects/dpdc/dpdc2.jpg", "/projects/dpdc/dpdc4.jpg"],
+    images: [
+      "/projects/dpdc/dpdc1.jpg",
+      "/projects/dpdc/dpdc3.jpg",
+      "/projects/dpdc/dpdc2.jpg",
+      "/projects/dpdc/dpdc4.jpg",
+    ],
     description:
       "Supervised residential development projects, managing quality control, progress tracking, and data-informed reporting for timely delivery.",
     impact:
@@ -36,7 +41,13 @@ const projectGroups: ProjectGroup[] = [
       "Residential Construction B – Ibadan",
       "Residential Remodeling and Renovation – Elewura, Ibadan",
     ],
-    images: ["/projects/residential/renovation3D.jpg", "/projects/residential/residential1.jpg", "/projects/residential/del-arete-renovation3.jpg", "/projects/residential/residential4.jpg", "/projects/residential/residential5.jpg"],
+    images: [
+      "/projects/residential/renovation3D.jpg",
+      "/projects/residential/residential1.jpg",
+      "/projects/residential/del-arete-renovation3.jpg",
+      "/projects/residential/residential4.jpg",
+      "/projects/residential/residential5.jpg",
+    ],
     description:
       "Led multiple residential and renovation projects with a focus on cost efficiency, material management, and client satisfaction.",
     impact:
@@ -64,11 +75,19 @@ const projectGroups: ProjectGroup[] = [
       "Renovation of Classroom and Furniture Supply – IGS Old Students Association, Ibadan",
       "Renovation of Classroom Block – Itire, Lagos",
     ],
-    images: ["/projects/renovation/renovations1.jpg", "/projects/renovation/residential3.jpg", "/projects/renovation/residential2.jpg", "/projects/renovation/renov-school2.jpg", "/projects/renovation/renovation5.jpg", "/projects/renovation/renov-school4.jpg", "/projects/renovation/renov-school3.jpg"],
+    images: [
+      "/projects/renovation/renovations1.jpg",
+      "/projects/renovation/residential3.jpg",
+      "/projects/renovation/residential2.jpg",
+      "/projects/renovation/renov-school2.jpg",
+      "/projects/renovation/renovation5.jpg",
+      "/projects/renovation/renov-school4.jpg",
+      "/projects/renovation/renov-school3.jpg",
+    ],
     description:
-      "Managed renovation and infrastructure improvement works across educational and hospitality facilities, ensuring operational upgrades and sustainable resource planning during construction phases.",
+      "Oversaw renovation and infrastructure upgrades across educational and hospitality facilities, ensuring operational improvements and efficient resource use during construction.",
     impact:
-      "Delivered functional enhancements and water infrastructure improvements while maintaining project timelines and quality standards. Strengthened client confidence through transparent progress tracking and adaptive project control.",
+      "Delivered key functional and water system enhancements on schedule, upholding quality standards and strengthening client trust through transparent progress tracking.",
     tags: ["Renovation Management", "Infrastructure Upgrade", "Water Systems", "Sustainability"],
   },
 ];
@@ -79,10 +98,22 @@ interface ProjectCarouselProps {
 
 function ProjectCarousel({ images }: ProjectCarouselProps) {
   const autoplay = useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: false, stopOnMouseEnter: true })
+    Autoplay({
+      delay: 4000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: false,
+    })
   );
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [autoplay.current]);
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      dragFree: true,
+      duration: 25,
+      containScroll: "trimSnaps",
+    },
+    [autoplay.current]
+  );
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -97,20 +128,39 @@ function ProjectCarousel({ images }: ProjectCarouselProps) {
       <div className="overflow-hidden rounded-xl" ref={emblaRef}>
         <div className="flex">
           {images.map((src, i) => (
-            <div key={i} className="relative min-w-full h-56 md:h-64 shrink-0">
+            <motion.div
+              key={i}
+              className="relative min-w-full h-56 md:h-64 shrink-0 overflow-hidden rounded-xl"
+              initial={{ opacity: 0.6, scale: 0.98 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <Image
                 src={src}
                 alt={`Project image ${i + 1}`}
                 fill
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                className="object-cover rounded-xl"
                 priority={i === 0}
               />
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
 
-      {/* Navigation Arrows with Framer Motion animation */}
+      {/* Autoplay progress indicator */}
+      {/* <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-[3px] bg-muted rounded-full overflow-hidden">
+        <motion.div
+          className="h-full bg-primary"
+          animate={{ width: ["0%", "100%"] }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+      </div> */}
+
+      {/* Navigation Arrows */}
       <motion.button
         onClick={scrollPrev}
         initial={{ opacity: 0, x: -20 }}
@@ -118,7 +168,9 @@ function ProjectCarousel({ images }: ProjectCarouselProps) {
         whileTap={{ scale: 0.95 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="absolute top-1/2 -translate-y-1/2 left-3 bg-background/70 hover:bg-background/90 backdrop-blur-sm p-2 rounded-full shadow-md hidden group-hover:flex"
+        className="absolute top-1/2 -translate-y-1/2 left-3 bg-background/60 hover:bg-background/90 
+        backdrop-blur-md p-2 rounded-full shadow-lg shadow-black/10 border border-border/40 
+        hidden group-hover:flex transition-all duration-300"
       >
         <ChevronLeft className="w-5 h-5 text-primary" />
       </motion.button>
@@ -130,7 +182,9 @@ function ProjectCarousel({ images }: ProjectCarouselProps) {
         whileTap={{ scale: 0.95 }}
         whileInView={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.4, ease: "easeOut" }}
-        className="absolute top-1/2 -translate-y-1/2 right-3 bg-background/70 hover:bg-background/90 backdrop-blur-sm p-2 rounded-full shadow-md hidden group-hover:flex"
+        className="absolute top-1/2 -translate-y-1/2 right-3 bg-background/60 hover:bg-background/90 
+        backdrop-blur-md p-2 rounded-full shadow-lg shadow-black/10 border border-border/40 
+        hidden group-hover:flex transition-all duration-300"
       >
         <ChevronRight className="w-5 h-5 text-primary" />
       </motion.button>
@@ -191,7 +245,9 @@ export function Projects() {
                     ))}
                   </ul>
 
-                  <p className="text-muted-foreground mb-3 text-sm">{group.description}</p>
+                  <p className="text-muted-foreground mb-3 text-sm">
+                    {group.description}
+                  </p>
 
                   <div className="bg-primary/5 rounded-lg p-3 mb-3">
                     <p className="text-sm">
