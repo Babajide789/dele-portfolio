@@ -20,6 +20,32 @@ interface ProjectGroup {
 
 const projectGroups: ProjectGroup[] = [
   {
+    organization: "Crown Projects",
+    projects: ["Crown Terraces"],
+    images: [
+      
+      "/projects/crown/crown-terraces.jpeg",
+    ],
+    description:
+      "Independent project manager (IPM) for the construction of 5 units of 4 bedroom Terrace apartments at Olabode George, Victoria Island Lagos.",
+    impact:
+      "Ensured seamless execution of high-value residential construction by integrating strategic supervision with real-time performance tracking.",
+    tags: ["Project Supervision", "Data Reporting", "Residential Construction"],
+  },
+   {
+    organization: "Crown Projects",
+    projects: ["Crown Towers"],
+    images: [
+      
+      "/projects/crown/crown-towers.jpeg",
+    ],
+    description:
+      "Independent project manager (IPM) for the construction of 28 residential apartments on 9 floors at Sinari Daranijo, Victoria Island. Lagos.",
+    impact:
+      "Delivered residential developments on schedule through structured oversight, proactive risk management, and data-driven reporting.",
+    tags: ["Project Supervision", "Data Reporting", "Residential Construction"],
+  },
+  {
     organization: "Dayola Property and Development Company (DPDC)",
     projects: ["Heirs Park Residences", "Cornaview Apartments"],
     images: [

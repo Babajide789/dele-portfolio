@@ -36,7 +36,7 @@ export function Hero() {
                 </Link>
 
                 <Link
-                  href="/Oladele-Peter-Olafimihan-Construction-PM.pdf"
+                  href="/Dele_Peter_Olafimihan_Construction_PM.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
