@@ -25,12 +25,12 @@ const expertise = [
     description:
       "Skilled in organizing, cleaning, and maintaining datasets for seamless analytics and long-term accessibility.",
   },
-  {
-    icon: BarChart3,
-    title: "Data Analysis",
-    description:
-      "Transforming raw data into clear insights that support smart business decisions using Power BI, Excel, and advanced visualization tools.",
-  },
+  // {
+  //   icon: BarChart3,
+  //   title: "Data Analysis",
+  //   description:
+  //     "Transforming raw data into clear insights that support smart business decisions using Power BI, Excel, and advanced visualization tools.",
+  // },
   {
     icon: Plane,
     title: "DJI Drone Pilot",
